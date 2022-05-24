@@ -5,6 +5,9 @@ bool sortByVal(const pair<string, int> &a,const pair<string, int> &b);  //string
 
 int main()
 {
+  time_t start, end;
+  time(&start);
+  ios_base::sync_with_stdio(false);
   set<string> twit;                                 //creating the set to remove the repeated rows
   std::map<std::string, int> userFollowers;         //creating the map to count the followers of each user #id
   fstream fin;                                      //file pointer
@@ -39,6 +42,15 @@ vector<pair<string, int>> vec;                      //creating the vector to sor
     if(index==0) return 0;
     cout<<"user number "<<vec[index-1].first<<" has " << vec[index-1].second << " followers"<<endl;
     }
+
+
+        time(&end);
+
+    // Calculating total time taken by the program.
+    double time_taken = double(end - start);
+    cout << "Time taken by program is : " << fixed
+         << time_taken << setprecision(5);
+    cout << " sec " << endl;
 
     return 0;
 }
